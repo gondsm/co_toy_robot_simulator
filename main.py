@@ -18,11 +18,14 @@ if __name__ == "__main__":
                         help='If set, the simulator will take input from stdin. If not, it will run a hard-coded test.')
     args = parser.parse_args()
 
+    # Construct simulator and user interface, the two components we will orchestrate here.
     simulator = Simulator()
     interface = UserInterface()
 
+    # Select a source of commands, depending on whether this is a live session.
     command_source = interface.get_command_from_user if args.live else interface.get_pre_coded_commands
 
+    # Iterate over the source of commands until it has run out.
     for command in command_source():
         # The simulator does not need to process REPORT commands, as they cannot affect state.
         if command.type != Command.Type.REPORT:
