@@ -23,7 +23,7 @@ class Simulator:
     x_range: list[int] = [0, 4]
     y_range: list[int] = [0, 4]
 
-    def process_command(self, command: Command):
+    def process_command(self, command: Command) -> None:
         # Determine how the command will affect state
         candidate_state = self.__compute_next_state(command)
 
@@ -55,7 +55,7 @@ class Simulator:
             case _:
                 raise RuntimeError(f"Simulator received an unexpected command type: {command.type}")
 
-    def __validate_state(self, candidate_state: Pose):
+    def __validate_state(self, candidate_state: Pose) -> bool:
         """Determines whether the candidate state is valid.
         """
         if self.x_range[0] <= candidate_state.x <= self.x_range[1]\

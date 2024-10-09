@@ -4,6 +4,8 @@ from pose import Pose
 
 
 def move_forward(pose: Pose) -> Pose:
+    """Given a pose, determine the resulting pose if the robot moves one step forward.
+    """
     output = copy.deepcopy(pose)
 
     match pose.direction:
@@ -20,6 +22,8 @@ def move_forward(pose: Pose) -> Pose:
 
 
 def turn_left(direction: Pose.Direction) -> Pose.Direction:
+    """Given a direction, return the result of turning left.
+    """
     match direction:
         case Pose.Direction.NORTH:
             return Pose.Direction.WEST
@@ -32,6 +36,8 @@ def turn_left(direction: Pose.Direction) -> Pose.Direction:
 
 
 def turn_right(direction: Pose.Direction) -> Pose.Direction:
+    """Given a direction, return the result of turning right.
+    """
     match direction:
         case Pose.Direction.NORTH:
             return Pose.Direction.EAST

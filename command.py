@@ -18,7 +18,12 @@ class Command:
     Contains a command type and a pose. The pose will only be valid for commands of type PLACE; all other commands will
     have their pose set to None.
     """
+
     class Type(Enum):
+        """Enumerates all known command types.
+
+        (Enum values are strings to aid in string-to-enum conversion.)
+        """
         PLACE = "PLACE",
         MOVE = "MOVE",
         LEFT = "LEFT",
