@@ -1,7 +1,10 @@
 from typing import Generator
+import logging
 
 from command import Command
 from state import State
+
+logger = logging.getLogger(__name__)
 
 
 class UserInterface:
@@ -15,7 +18,13 @@ class UserInterface:
         """
         while True:
             raw_cmd = input("Input your command: ")
-            cmd = Command.from_string(raw_cmd)
+
+            try:
+                cmd = Command.from_string(raw_cmd)
+            except RuntimeError:
+                logger.info("Received an invalid command, exiting...")
+                return
+
             yield cmd
 
     def get_pre_coded_commands(self) -> Generator[Command, Command, Command]:
