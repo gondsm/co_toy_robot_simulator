@@ -69,6 +69,14 @@ Input your command: PLACE 10,10,NORTH
 WARNING:simulator:Latest command would lead to inadmissible state, so it has been ignored.
 ```
 
+To run the unit tests, simply run
+
+```
+pytest
+```
+
+at the root of the project. It should automagically find all of the unit tests under `test/`.
+
 
 ### Architecture
 

@@ -1,4 +1,9 @@
 import unittest
+import sys
+from pathlib import Path
+
+# Make modules in parent directory accessible
+sys.path.append(str(Path(__file__).parents[1]))
 
 from command import Command
 from pose import Pose
