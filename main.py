@@ -13,7 +13,9 @@ logging.basicConfig(level=logging.DEBUG)
 if __name__ == "__main__":
     # Parse arguments
     parser = argparse.ArgumentParser(description="Little toy robot simulator.")
-    parser.add_argument('--live', action='store_true', help='If set, the simulator will expect input from stdin. If not, it will use hard-coded commands.')
+    parser.add_argument('--live',
+                        action='store_true',
+                        help='If set, the simulator will take input from stdin. If not, it will run a hard-coded test.')
     args = parser.parse_args()
 
     simulator = Simulator()

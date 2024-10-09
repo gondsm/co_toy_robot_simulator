@@ -63,5 +63,6 @@ class TestCommandParsing(unittest.TestCase):
         self.assertRaises(RuntimeError,
                           lambda: Command.from_string(test_string))
 
+
 if __name__ == "__main__":
     unittest.main()

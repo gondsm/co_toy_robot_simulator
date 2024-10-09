@@ -91,7 +91,7 @@ def parse_string_into_command(raw_cmd: str) -> Optional[Command]:
             x = int(split_params[0])
             y = int(split_params[1])
         except ValueError:
-            logger.error(f"Error parsing out numbers from command!")
+            logger.error("Error parsing out numbers from command!")
             return None
 
         try:
